@@ -1,13 +1,7 @@
 package com.kk.demo;
 
-import com.kk.util.ArgsUtil;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
-
-import java.io.IOException;
-import java.util.Arrays;
-import java.util.StringTokenizer;
-
 import org.apache.hadoop.conf.Configuration;
 import org.apache.hadoop.fs.Path;
 import org.apache.hadoop.io.IntWritable;
@@ -16,12 +10,15 @@ import org.apache.hadoop.io.Text;
 import org.apache.hadoop.mapreduce.Job;
 import org.apache.hadoop.mapreduce.Mapper;
 import org.apache.hadoop.mapreduce.Reducer;
-import org.apache.hadoop.mapreduce.Mapper.Context;
 import org.apache.hadoop.mapreduce.lib.input.FileInputFormat;
 import org.apache.hadoop.mapreduce.lib.input.TextInputFormat;
 import org.apache.hadoop.mapreduce.lib.output.FileOutputFormat;
 import org.apache.hadoop.mapreduce.lib.output.TextOutputFormat;
 import org.apache.hadoop.util.GenericOptionsParser;
+
+import java.io.IOException;
+import java.util.Arrays;
+import java.util.StringTokenizer;
 
 public class WordCount {
 	public static final Log logger = LogFactory.getLog(WordCount.class);
@@ -56,15 +53,11 @@ public class WordCount {
 
 	public static void main(String[] args) throws Exception {
 		System.out.println(Arrays.asList(args));
-		// 过滤参数，如果第一个参数是类名则过滤掉
-		args = ArgsUtil.filterClass(args);
-		System.out.println(Arrays.asList(args));
 
 		Configuration conf = new Configuration();
 
 		// 过滤参数
 		String[] otherArgs = new GenericOptionsParser(conf, args).getRemainingArgs();
-		System.out.println(Arrays.asList(otherArgs));
 		if (otherArgs.length != 2) {
 			System.err.println("Usage: wordcount <in> <out>");
 			System.exit(2);
