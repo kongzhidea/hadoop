@@ -205,7 +205,7 @@
                     </descriptorRefs>
                     <archive>
                         <manifest>
-                            <mainClass>com.kk.demo.StatStudentScore</mainClass>
+                            <mainClass>com.kk.demo.NumberSort</mainClass>
                         </manifest>
                     </archive>
                 </configuration>

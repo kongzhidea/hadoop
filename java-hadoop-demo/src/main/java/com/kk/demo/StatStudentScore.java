@@ -3,6 +3,7 @@ package com.kk.demo;
 import com.kk.util.ConsoleLogger;
 import org.apache.commons.lang.StringUtils;
 import org.apache.commons.lang.math.NumberUtils;
+import org.apache.hadoop.conf.Configuration;
 import org.apache.hadoop.conf.Configured;
 import org.apache.hadoop.fs.Path;
 import org.apache.hadoop.io.IntWritable;
@@ -84,7 +85,8 @@ public class StatStudentScore extends Configured implements Tool {
         System.out.println(Arrays.asList(args));
 
         // 通过toolrunner启动
-        int ret = ToolRunner.run(new StatStudentScore(), args);
+//        int ret = ToolRunner.run(new StatStudentScore(), args);
+        int ret = ToolRunner.run(new Configuration(), new StatStudentScore(), args);
         System.exit(ret);
     }
 }

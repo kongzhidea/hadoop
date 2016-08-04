@@ -19,10 +19,13 @@
 * 启动方式有两种
     * main直接定义job，启动
     * 实现Tool接口的run方法，  main方法中通过ToolRunner.run启动
+        * 会先解析 args（GenericOptionsParser）
 * hadoop中，string用 Text，int用 IntWritable
+
 ### stream
 ### 自定义排序
 ### combine
+### aggregate
 
 ### demo
 
@@ -31,5 +34,11 @@
 * StatStudentScore
     * 求每个学生的平均成绩
     * 输入文件为每行:name score
+* NumberSort
+    * 输入文件 每行一个数字
+    * 输出文件 每行两列，数字的排名(从1开始) 数字本身
+    * 要保证每个reduce中的数字的key是连续的，需要自定义分片规则，将同在一个区间段的数字都放到一个reducer中
+    * 输出:有个reduce就输出几个文件，再对文件做处理即可
+    * Partion 可以设置分区，将key按照一定规则分到不同的reduce
 
 
