@@ -24,7 +24,6 @@
 
 ### stream
 ### 自定义排序
-### combine
 ### aggregate
 
 ### demo
@@ -39,6 +38,11 @@
     * 输出文件 每行两列，数字的排名(从1开始) 数字本身
     * 要保证每个reduce中的数字的key是连续的，需要自定义分片规则，将同在一个区间段的数字都放到一个reducer中
     * 输出:有个reduce就输出几个文件，再对文件做处理即可
-    * Partion 可以设置分区，将key按照一定规则分到不同的reduce
+    * ***Partion 可以设置分区，将key按照一定规则分到不同的reduce***
+    * ***hadoop 保证key是有序的。***
+* MaxNumber
+    * 输入文件 每行一个数字
+    * 输出文件:最大值
+    * ***combine 相当于本地reduce，然后在转到reduce***
 
 
