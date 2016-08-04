@@ -21,7 +21,8 @@
     * 实现Tool接口的run方法，  main方法中通过ToolRunner.run启动
         * 会先解析 args（GenericOptionsParser）
 * hadoop中，string用 Text，int用 IntWritable
-
+* FileInputFormat.setInputPaths(job, new Path(args[0]))
+    * 可以添加文件，也可以添加目录(自动加载目录下所有文件),也可以使用*通配符
 ### stream
 ### 自定义排序
 ### aggregate
