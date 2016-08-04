@@ -205,7 +205,7 @@
                     </descriptorRefs>
                     <archive>
                         <manifest>
-                            <mainClass>com.kk.demo.MaxNumber</mainClass>
+                            <mainClass>com.kk.demo.Duplicate</mainClass>
                         </manifest>
                     </archive>
                 </configuration>

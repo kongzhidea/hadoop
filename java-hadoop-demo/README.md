@@ -49,5 +49,7 @@
     * ***修改hadoop默认数据方式***
     * ***TextInputFormat是默认的InputFormat，一行为一个record，key是该行在文件中的偏移量，value是该行的内容。***
     * ***设置输入文件格式KeyValueTextInputFormat,默认按照\t分割***
+* Duplicate
+    * 数据去重,类似sort -u， 数据每行一个
 
 
