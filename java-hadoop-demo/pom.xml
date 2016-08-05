@@ -205,7 +205,7 @@
                     </descriptorRefs>
                     <archive>
                         <manifest>
-                            <mainClass>com.kk.demo.Duplicate</mainClass>
+                            <mainClass>com.kk.demo.Grep</mainClass>
                         </manifest>
                     </archive>
                 </configuration>

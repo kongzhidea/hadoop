@@ -51,5 +51,7 @@
     * ***设置输入文件格式KeyValueTextInputFormat,默认按照\t分割***
 * Duplicate
     * 数据去重,类似sort -u， 数据每行一个
-
+* Grep
+    * 简单Grep，
+    * 输出空，使用NullWritable.get()
 
