@@ -1,6 +1,6 @@
 # hadoop
 
-### hadoop ³£¼ûshellÃüÃû
+### hadoop å¸¸è§shellå‘½å
 * alias hls="hadoop fs -ls "
 * alias hlsr="hadoop fs -lsr "
 * alias hmkdir="hadoop fs -mkdir "
