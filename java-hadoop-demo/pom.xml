@@ -205,7 +205,7 @@
                     </descriptorRefs>
                     <archive>
                         <manifest>
-                            <mainClass>com.kk.demo.TopKNum</mainClass>
+                            <mainClass>com.kk.demo.Anagrams</mainClass>
                         </manifest>
                     </archive>
                 </configuration>

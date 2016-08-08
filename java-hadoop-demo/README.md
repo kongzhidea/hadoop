@@ -60,4 +60,8 @@
     * 利用MapReduce求前K大数(最小堆)
     * ***config 传入main参数到 map，reduce***
     * 重写map,reduce的***setup,cleanup***方法
-
+* Anagrams
+    * 寻找变位词集合
+    * 给定一本英语单词词典，请找出所有的变位词集。所谓的变位词是指，组成各个单词的字母完全相同，只是字母排列的顺序不同。
+    * 输入:pans pots opt snap stop tops
+    * 输出:[pans,snap] [opt] [pots,stop,tops]
