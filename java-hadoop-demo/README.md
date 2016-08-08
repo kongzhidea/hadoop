@@ -54,4 +54,8 @@
 * Grep
     * 简单Grep，
     * 输出空，使用NullWritable.get()
+* TopKNum
+    * 利用MapReduce求前K大数(最小堆)
+    * ***config 传入main参数到 map，reduce***
+    * 重写map,reduce的***setup,cleanup***方法
 
