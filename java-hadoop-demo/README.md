@@ -24,6 +24,27 @@
 * hadoop中，string用 Text，int用 IntWritable
 * FileInputFormat.setInputPaths(job, new Path(args[0]))
     * 可以添加文件，也可以添加目录(自动加载目录下所有文件),也可以使用 通配符
+* writeable 尽量重用
+    * 不推荐以下写法，这样会导致程序分配出成千上万个短周期的对象。Java垃圾收集器就要为此做很多的工作
+    * ```
+        for (String word : words) {
+                      output.collect(new Text(word), new IntWritable(1));
+              }
+      ```
+    * 推荐以下写法：
+    * ```
+         IntWritable one = new IntWritable(1);
+         public void map(...) {
+              for (String word: words) {
+                    wordText.set(word);
+                    output.collect(wordText, one);
+               }
+            }
+      ```
+* 性能调优的一些建议：
+    1. NumberFormat 相当慢，尽量避免使用它。
+    2. String.split—不管是编码或是解码UTF8的字符串都是慢的超出你的想像，使用合适的Writable类型。
+    3. 使用StringBuffer.append来连接字符串
 
 ### stream
 ### 自定义排序
