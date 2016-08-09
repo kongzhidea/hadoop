@@ -1,11 +1,10 @@
 #!/usr/bin/python
 # -*- coding:utf-8 -*-
 
-from operator import itemgetter
 import sys
 
 # maps words to their counts
-word2count = {}
+dict = {}
 
 # input comes from STDIN
 for line in sys.stdin:
@@ -13,24 +12,9 @@ for line in sys.stdin:
     line = line.strip()
 
     # parse the input we got from mapper.py
-    word, count = line.split('\t', 1)
-    # convert count (currently a string) to int
-    try:
-        count = int(count)
-        word2count[word] = word2count.get(word, 0) + count
-    except ValueError:
-        # count was not a number, so silently
-        # ignore/discard this line
-        pass
+    word, count = line.split('\t')
+    dict[word] = dict.get(word,0)+1
 
-# sort the words lexigraphically;
-#
-# this step is NOT required, we just do it so that our
-# final output will look more like the official Hadoop
-# word count examples
-sorted_word2count = sorted(word2count.items(), key=itemgetter(0))
-
-# write the results to STDOUT (standard output)
-for word, count in sorted_word2count:
+for word, count in dict.items():
     print '%s\t%s'% (word, count)
  
