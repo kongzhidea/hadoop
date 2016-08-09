@@ -38,3 +38,15 @@ MapReduce是一个简单的并行编程模型。是大数据并行计算的利�
 如果你让数据共享在MapReduce，你可以这样做：
     * 迭代：运行多个 MapReduce jobs ，前一个 MapReduce 的输出结果，作为下一个 MapReduce 的输入。
     * 共享状态信息：但不要分享信息在内存中，由于每个MapReduce的工作是在单个JVM上运行。
+
+### hadoop框架
+1. NameNode
+NameNode是HDFS的守护程序，负责记录文件是如何分割成数据块的，以及这些数据块被存储到哪些数据节点上。它的功能是对内存及I/O进行集中管理。
+2. DataNode
+集群中每个从服务器都运行一个DataNode后台程序，后台程序负责把HDFS数据块读写到本地文件系统。需要读写数据时，由NameNode告诉客户端去哪个DataNode进行具体的读写操作。
+3. Secondary NameNode
+Secondary NameNode是一个用来监控HDFS状态的辅助后台程序，如果NameNode发生问题，可以使用Secondary,NameNode作为备用的NameNode。
+4. JobTracker
+JobTracker后台程序用来连接应用程序与Hadoop，用户应用提交到集群后，由JobTracker决定哪个文件处理哪个task执行，一旦某个task失败，JobTracker会自动开启这个task。
+5. TaskTracker
+TaskTracker负责存储数据的DataNode相结合，位于从节点，负责各自的task。
