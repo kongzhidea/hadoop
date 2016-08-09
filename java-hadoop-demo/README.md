@@ -86,7 +86,9 @@
     * 给定一本英语单词词典，请找出所有的变位词集。所谓的变位词是指，组成各个单词的字母完全相同，只是字母排列的顺序不同。
     * 输入:pans pots opt snap stop tops
     * 输出:[pans,snap] [opt] [pots,stop,tops]
-
+* Join
+    * 两表关联
+    * ***使用DistributedCache.addCacheFile()将文件加入到所有Map的缓存里,最好在setup中执行***
 
 
 

@@ -205,7 +205,7 @@
                     </descriptorRefs>
                     <archive>
                         <manifest>
-                            <mainClass>com.kk.demo.Anagrams</mainClass>
+                            <mainClass>com.kk.demo.Join</mainClass>
                         </manifest>
                     </archive>
                 </configuration>
