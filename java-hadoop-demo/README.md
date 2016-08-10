@@ -47,6 +47,8 @@
     3. 使用StringBuffer.append来连接字符串
 
 ### stream
+*   见python
+
 ### 自定义排序
 ### aggregate
 
