@@ -91,6 +91,9 @@
 * Join
     * 两表关联
     * ***使用DistributedCache.addCacheFile()将文件加入到所有Map的缓存里,最好在setup中执行***
+* 使用第三方jar
+    * FileSystem fs = FileSystem.get(URI.create(args[0]), conf);
+    * DistributedCache.addFileToClassPath(new Path("/user/lib/jedis-2.0.0.jar"), conf, fs);
 
 
 
